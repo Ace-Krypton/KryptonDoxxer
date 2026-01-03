@@ -13,6 +13,8 @@ add_executable(kryptondoxxer
         src/core/logger.hpp
         src/net/http_client.cpp
         src/net/http_client.hpp
+        src/collectors/paste_collector.cpp
+        src/collectors/paste_collector.hpp
 )
 
 # --- libcurl ---
