@@ -1,13 +1,24 @@
 #include "pattern_scanner.hpp"
 #include <regex>
 
-auto scan_patterns(const std::string &text) -> std::vector<std::string> {
-    std::vector<std::string> hits;
+auto scan_patterns(const std::string &text) -> std::vector<finding> {
+    std::vector<finding> hits;
     const std::regex email(R"([\w\.-]+@[\w\.-]+\.\w+)");
-    const std::regex key(R"(BEGIN\s+RSA\s+PRIVATE\s+KEY)");
 
-    if (std::regex_search(text, email)) hits.emplace_back("email");
-    if (std::regex_search(text, key)) hits.emplace_back("private_key");
+    for (auto it = std::sregex_iterator(text.begin(), text.end(), email);
+        it != std::sregex_iterator(); ++it) {
+        hits.push_back({
+            "email",
+            it->str()
+        });
+    }
+
+    if (text.find("BEGIN RSA PRIVATE KEY") != std::string::npos) {
+        hits.push_back({
+            "private_key",
+            "BEGIN RSA PRIVATE KEY"
+        });
+    }
 
     return hits;
 }

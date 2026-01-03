@@ -11,5 +11,4 @@ auto log(const log_level level, const std::string &msg) -> void {
                                    "[ERROR] ";
 
     std::cerr << prefix << msg << '\n';
-    std::cout << "This is a test" << std::endl;
 }

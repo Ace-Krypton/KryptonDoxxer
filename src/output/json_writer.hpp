@@ -2,5 +2,10 @@
 #include <string>
 #include <vector>
 
+struct finding {
+    std::string type;
+    std::string value;
+};
+
 auto write_json(const std::string &source,
-    std::vector<std::string> &hits) -> void;
+    const std::vector<finding> &hits) -> void;
