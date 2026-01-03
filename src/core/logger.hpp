@@ -3,4 +3,4 @@
 
 enum class log_level {INFO, WARN, ERROR};
 
-void log(log_level level, const std::string &msg);
+auto log(log_level level, const std::string &msg) -> void;
