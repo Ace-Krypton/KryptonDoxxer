@@ -1,14 +1,15 @@
 #include "logger.hpp"
 
-#include <iostream>
 #include <ostream>
+#include <iostream>
 
-//this is a test
-auto log(log_level level, const std::string &msg) -> void {
+
+auto log(const log_level level, const std::string &msg) -> void {
     const char *prefix =
-        level == log_level::INFO  ? "[INFO] " :
-        level == log_level::WARN  ? "[WARN] " :
+        level == log_level::INFO ? "[INFO] " :
+        level == log_level::WARN ? "[WARN] " :
                                    "[ERROR] ";
 
     std::cerr << prefix << msg << '\n';
+    std::cout << "This is a test" << std::endl;
 }
