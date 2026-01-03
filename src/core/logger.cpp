@@ -3,6 +3,7 @@
 #include <iostream>
 #include <ostream>
 
+//this is a test
 auto log(log_level level, const std::string &msg) -> void {
     const char *prefix =
         level == log_level::INFO  ? "[INFO] " :
