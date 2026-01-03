@@ -3,4 +3,5 @@
 
 enum class log_level {INFO, WARN, ERROR};
 
+//sign key test
 auto log(log_level level, const std::string &msg) -> void;
