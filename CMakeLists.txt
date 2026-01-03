@@ -17,6 +17,8 @@ add_executable(kryptondoxxer
         src/collectors/paste_collector.hpp
         src/parsers/pattern_scanner.cpp
         src/parsers/pattern_scanner.hpp
+        src/output/json_writer.cpp
+        src/output/json_writer.hpp
 )
 
 # --- libcurl ---
