@@ -1,5 +1,4 @@
 #include "mail_verification.hpp"
-
 #include <algorithm>
 #include <cctype>
 #include <regex>

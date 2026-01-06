@@ -13,12 +13,5 @@ auto scan_patterns(const std::string &text) -> std::vector<finding> {
         });
     }
 
-    if (text.find("BEGIN RSA PRIVATE KEY") != std::string::npos) {
-        hits.push_back({
-            "private_key",
-            "BEGIN RSA PRIVATE KEY"
-        });
-    }
-
     return hits;
 }

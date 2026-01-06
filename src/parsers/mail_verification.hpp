@@ -14,4 +14,4 @@ struct email_verification {
     std::string reason;
 };
 
-auto verify_email(const std::string& input) -> email_verification;
+auto verify_email(const std::string &input) -> email_verification;
